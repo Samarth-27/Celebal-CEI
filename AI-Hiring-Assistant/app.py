@@ -91,7 +91,11 @@ st.markdown("""
 
 # Import modules
 try:
-    from src.generative_ai_engine import ExplainableAI, RAGPipeline, ConversationalAgent
+    from src.generative_ai_engine import (
+    ExplainableAI,
+    ConversationalAgent,
+    RAGPipeline
+        )
     from src.resume_parser import parse_resume
     from src import ranking_engine
     MODULES_LOADED = True
@@ -107,10 +111,7 @@ if not MODULES_LOADED:
 
 # Setup state
 if "rag" not in st.session_state:
-    try:
-        st.session_state.rag = RAGPipeline('vector_store/faiss_index/hr_knowledge.index', 'vector_store/faiss_index/chunks.json')
-    except:
-        st.session_state.rag = None
+    st.session_state.rag = None
 
 if MODULES_LOADED:
     if "xai" not in st.session_state:
@@ -250,7 +251,17 @@ Job Description: {jd_raw_text}"""
         
         # Start agent
         if "agent" not in st.session_state or st.session_state.get("agent_feedback") != feedback:
-            st.session_state.agent = ConversationalAgent(feedback, st.session_state.rag)
+            if st.session_state.rag is None:
+                with st.spinner("Loading AI Mentor..."):
+                    st.session_state.rag = RAGPipeline(
+                        "vector_store/faiss_index/hr_knowledge.index",
+                        "vector_store/faiss_index/chunks.json"
+                    )
+
+            st.session_state.agent = ConversationalAgent(
+                feedback,
+                st.session_state.rag
+            )
             st.session_state.agent_feedback = feedback
             
         for message in st.session_state.messages:
