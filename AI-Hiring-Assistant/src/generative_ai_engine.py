@@ -2,8 +2,6 @@ import os
 import json
 import faiss
 from groq import Groq
-from sentence_transformers import SentenceTransformer
-
 class ExplainableAI:
     def __init__(self):
         api_key = os.getenv("GROQ_API_KEY")
@@ -73,16 +71,16 @@ class ExplainableAI:
 
 class RAGPipeline:
     def __init__(self, index_path, chunks_path):
-        self.embedding_model = SentenceTransformer('all-MiniLM-L6-v2')
+        from sentence_transformers import SentenceTransformer
+
+        self.embedding_model = SentenceTransformer("all-MiniLM-L6-v2")
         self.index = faiss.read_index(index_path)
-        with open(chunks_path, 'r') as f:
+
+        with open(chunks_path, "r") as f:
             self.chunks = json.load(f)
-            
+
         api_key = os.getenv("GROQ_API_KEY")
-        if api_key:
-            self.client = Groq(api_key=api_key)
-        else:
-            self.client = None
+        self.client = Groq(api_key=api_key) if api_key else None
             
     def retrieve(self, query, top_k=2):
         query_emb = self.embedding_model.encode([query], show_progress_bar=False)
