@@ -8,6 +8,7 @@ from dotenv import load_dotenv
 # Add src folder to Python path
 CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
 SRC_DIR = os.path.join(CURRENT_DIR, "src")
+VECTOR_STORE = os.path.join(CURRENT_DIR, "vector_store", "faiss_index")
 
 if SRC_DIR not in sys.path:
     sys.path.insert(0, SRC_DIR)
@@ -253,9 +254,15 @@ Job Description: {jd_raw_text}"""
         if "agent" not in st.session_state or st.session_state.get("agent_feedback") != feedback:
             if st.session_state.rag is None:
                 with st.spinner("Loading AI Mentor..."):
+                    index_path = os.path.join(VECTOR_STORE, "hr_knowledge.index")
+                    chunks_path = os.path.join(VECTOR_STORE, "chunks.json")
+                    st.write("Current Directory:", CURRENT_DIR)
+                    st.write("Index Path:", index_path)
+                    st.write("Index exists:", os.path.exists(index_path))
+                    st.write("Chunks exists:", os.path.exists(chunks_path))
                     st.session_state.rag = RAGPipeline(
-                        "vector_store/faiss_index/hr_knowledge.index",
-                        "vector_store/faiss_index/chunks.json"
+                        index_path,
+                        chunks_path
                     )
 
             st.session_state.agent = ConversationalAgent(
