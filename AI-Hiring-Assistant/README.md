@@ -1,5 +1,5 @@
 # AI-Powered Intelligent Hiring Assistant
-
+🔗 **[Click here to see live preview](https://ai-hiring-assistant01.streamlit.app/)**
 An end-to-end AI system that evaluates candidate resumes against job requirements using machine learning and deep learning models, and generates personalized, explainable feedback through a retrieval-based intelligent text generation pipeline. 
 
 ## Demo Screenshots
