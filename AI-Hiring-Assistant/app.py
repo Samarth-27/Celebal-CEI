@@ -5,6 +5,13 @@ import sys
 import asyncio
 from dotenv import load_dotenv
 
+# Add src folder to Python path
+CURRENT_DIR = os.path.dirname(os.path.abspath(__file__))
+SRC_DIR = os.path.join(CURRENT_DIR, "src")
+
+if SRC_DIR not in sys.path:
+    sys.path.insert(0, SRC_DIR)
+
 load_dotenv(override=True)
 
 # Fix asyncio "Event loop is closed" error on Windows
@@ -107,8 +114,9 @@ if "rag" not in st.session_state:
     except:
         st.session_state.rag = None
 
-if "xai" not in st.session_state:
-    st.session_state.xai = ExplainableAI()
+if MODULES_LOADED:
+    if "xai" not in st.session_state:
+        st.session_state.xai = ExplainableAI()
 
 tab1, tab2 = st.tabs(["Candidate View", "Recruiter View"])
 
