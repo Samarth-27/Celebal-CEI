@@ -87,15 +87,13 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-# Add src to path
-sys.path.append('src')
+
 
 # Import modules
 try:
-    # pyrefly: ignore [missing-import]
-    from generative_ai_engine import ExplainableAI, RAGPipeline, ConversationalAgent
-    # pyrefly: ignore [missing-import]
-    from resume_parser import parse_resume
+    from src.generative_ai_engine import ExplainableAI, RAGPipeline, ConversationalAgent
+    from src.resume_parser import parse_resume
+    from src import ranking_engine
     MODULES_LOADED = True
 except ImportError as e:
     MODULES_LOADED = False
@@ -315,7 +313,7 @@ with tab2:
                     st.success(f"Extracted Skills: {', '.join(jd_skills)}")
                     
                     # Rank candidates
-                    import ranking_engine
+                    from src import ranking_engine
                     import importlib
                     importlib.reload(ranking_engine)
                     ranker = ranking_engine.CandidateRanker()
