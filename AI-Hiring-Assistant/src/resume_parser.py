@@ -5,7 +5,11 @@ import fitz  # PyMuPDF
 import pdfplumber
 from docx import Document
 
-nlp = spacy.load("en_core_web_sm")
+try:
+    nlp = spacy.load("en_core_web_sm")
+except Exception:
+    # Fallback model so the app still runs
+    nlp = spacy.blank("en")
 
 def extract_text(file_path):
     ext = os.path.splitext(file_path)[1].lower()
