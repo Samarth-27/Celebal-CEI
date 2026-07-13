@@ -1,0 +1,22 @@
+[
+  {
+    "title": "ATS Formatting Guidelines",
+    "content": "To pass the ATS (Applicant Tracking System), candidates must avoid using complex tables, columns, or images. Use standard fonts like Arial or Calibri. Keep the layout simple and save the resume as a PDF unless specified otherwise. Use standard headings like 'Experience', 'Education', and 'Skills'."
+  },
+  {
+    "title": "Action Verbs for Experience",
+    "content": "When describing work experience, always start bullet points with strong action verbs such as Developed, Managed, Orchestrated, Designed, or Optimized. Avoid passive phrases like 'Responsible for' or 'Helped with'. Quantify achievements with metrics (e.g., 'Increased revenue by 20%')."
+  },
+  {
+    "title": "Skills Section Best Practices",
+    "content": "Tailor the skills section to match the job description. Do not list generic skills like 'Hardworking' or 'Team Player'. Focus on hard skills, tools, and technologies (e.g., Python, AWS, React). Group them logically into categories if there are many."
+  },
+  {
+    "title": "Handling Employment Gaps",
+    "content": "Address employment gaps honestly. If you took time off for personal reasons, state it briefly. If you used the time to upskill, mention the courses or certifications completed during that period. Transparency is preferred over unexplained gaps."
+  },
+  {
+    "title": "Contact Information Checklist",
+    "content": "Ensure contact information is clearly visible at the top. Include your full name, a professional email address, a phone number, and a link to your LinkedIn profile or GitHub portfolio. Do not include personal details like age, marital status, or photo unless applying in specific regions."
+  }
+]

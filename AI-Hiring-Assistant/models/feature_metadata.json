@@ -1,0 +1,1 @@
+{"text_column_for_tfidf": "Text", "numeric_feature_columns": ["char_count", "word_count", "sentence_count", "unique_word_count", "avg_word_length", "technical_skill_count", "education_keyword_count", "experience_keyword_count", "certification_keyword_count", "project_keyword_count"], "label_column_encoded": "category_encoded"}

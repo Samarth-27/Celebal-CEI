@@ -1,0 +1,26 @@
+{
+  "candidate_name": "John Doe",
+  "job_title": "Data Scientist",
+  "overall_match_score": 75.4,
+  "matched_skills": [
+    "python",
+    "machine learning",
+    "pandas",
+    "sql"
+  ],
+  "missing_skills": [
+    "scikit-learn",
+    "deep learning",
+    "aws"
+  ],
+  "strengths": [
+    "Meets or exceeds the required experience of 3 years."
+  ],
+  "weaknesses": [
+    "Lacks several core technical skills required for this role."
+  ],
+  "recommendations": [
+    "Consider acquiring certifications or building projects using: scikit-learn, deep learning, aws."
+  ],
+  "learning_roadmap": "1. Take an online course covering scikit-learn, deep learning.\n2. Build a portfolio project integrating these skills.\n3. Contribute to open source."
+}

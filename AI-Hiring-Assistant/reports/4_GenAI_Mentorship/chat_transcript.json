@@ -1,0 +1,14 @@
+[
+  {
+    "user": "Why is my score only 75%?",
+    "ai": "(No API Key) Simulated answer based on context:\nHR Info: When describing work experience, always start bullet points with strong action verbs such as Develop...\nCandidate missing: ['scikit-learn', 'deep learning', 'aws']"
+  },
+  {
+    "user": "Which projects should I build to improve my chances?",
+    "ai": "(No API Key) Simulated answer based on context:\nHR Info: When describing work experience, always start bullet points with strong action verbs such as Develop...\nCandidate missing: ['scikit-learn', 'deep learning', 'aws']"
+  },
+  {
+    "user": "How should I format my resume to pass the ATS?",
+    "ai": "(No API Key) Simulated answer based on context:\nHR Info: To pass the ATS (Applicant Tracking System), candidates must avoid using complex tables, columns, or...\nCandidate missing: ['scikit-learn', 'deep learning', 'aws']"
+  }
+]

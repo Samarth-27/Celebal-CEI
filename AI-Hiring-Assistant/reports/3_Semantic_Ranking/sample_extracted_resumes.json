@@ -1,0 +1,24 @@
+[
+  {
+    "filename": "John_Doe_Resume.docx",
+    "name": "John Doe\nEmail",
+    "email": "john.doe@example.com",
+    "phone": "123) 456-7890",
+    "skills": "Python, Machine Learning, Data Science, AWS, SQL",
+    "experience": "Data Scientist at Tech Corp (2020 - Present)\n- Developed ML models for customer churn.\n- Built RAG pipelines using LangChain.",
+    "education": "M.S. in Computer Science, University of Technology (2018 - 2020)",
+    "projects": "",
+    "certifications": ""
+  },
+  {
+    "filename": "Jane_Smith_Resume.pdf",
+    "name": "Jane Smith",
+    "email": "jane.smith@demo.com",
+    "phone": "+1-987-654",
+    "skills": "Java, Spring Boot, Microservices, Docker, Kubernetes",
+    "experience": "Senior Backend Engineer at Dev Solutions (2019 - Present)\n- Designed scalable REST APIs.",
+    "education": "B.S. in Software Engineering, State University (2015 - 2019)",
+    "projects": "",
+    "certifications": ""
+  }
+]
