@@ -20,7 +20,7 @@ except ImportError:
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-import seaborn as sns
+
 from sklearn.metrics.pairwise import cosine_similarity
 
 logging.basicConfig(level=logging.INFO, format="%(asctime)s | %(levelname)s | %(message)s")
@@ -227,11 +227,26 @@ class CandidateRanker:
                 y_col = col
                 break
                 
+        
         plt.figure(figsize=(10, 6))
-        sns.barplot(data=plot_df, x="FinalScore", y=y_col, palette="viridis")
-        plt.title(f'Top {top_n} Candidate Ranking Scores')
-        plt.xlabel('Weighted Final Score')
-        plt.ylabel('Candidate')
+
+        try:
+            import seaborn as sns
+
+            sns.barplot(
+                data=plot_df,
+                x="FinalScore",
+                y=y_col,
+                palette="viridis"
+            )
+
+        except Exception:
+            plt.barh(plot_df[y_col], plot_df["FinalScore"])
+
         plt.tight_layout()
+        
+        
+        
+        
         plt.savefig(REPORTS_DIR / "candidate_ranking.png", dpi=300)
         plt.close()
