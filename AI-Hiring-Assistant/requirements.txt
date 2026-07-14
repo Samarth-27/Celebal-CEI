@@ -20,6 +20,9 @@ spacy==3.7.5
 joblib==1.4.2
 
 groq==0.9.0
+httpx==0.27.2
+httpcore==1.0.5
+
 python-dotenv==1.0.1
 
 matplotlib==3.9.1
